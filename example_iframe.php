@@ -16,7 +16,7 @@ $jetid			= NULL; // Opcional si no se utiliza BankStore JET
 
 $paycomet = new Paycomet_Bankstore($merchantCode, $terminal, $password, $jetid);
 
-//------------------------------------------------  datos                          ------------------------------------->
+//------------------------------------------------  datos de pago                 ------------------------------------->
 $transreference=time(); //refencia
 $amount="40"; //0.40 centimos
 $currency="EUR";
@@ -29,8 +29,8 @@ if ($response->RESULT == "KO") {
 	//var_dump($response);
 	echo "Error en pasarela de pago.";
 } else {	
-	//echo "BIEN: ";
-  //var_dump($response);
+	//echo "OK: ";
+        //var_dump($response);
 	//echo $response->URL_REDIRECT;
 	?>
 	<iframe title="titulo"  sandbox="allow-top-navigation allow-scripts allow-same-origin allow-forms" src="<?=$response->URL_REDIRECT?>" width="500" height="100%" frameborder="0" marginheight="0" marginwidth="0" scrolling="yes" style="border: 0px solid #000000; padding: 0px; margin: 0px"></iframe>
